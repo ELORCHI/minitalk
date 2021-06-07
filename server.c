@@ -14,6 +14,32 @@
 #include <signal.h>
 #include <stdio.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int n)
+{
+	int		help;
+	long	longn;
+
+	longn = (long)n;
+	if (longn < 0)
+	{
+		ft_putchar('-');
+		longn = -1 * longn;
+	}
+	if (longn <= 9)
+		ft_putchar(longn + 48);
+	else
+	{
+		help = longn % 10;
+		ft_putnbr(longn / 10);
+		ft_putchar(help + 48);
+	}
+}
+
 void 	store_bits(int bit)
 {
 	static unsigned char	decimal;
@@ -36,7 +62,7 @@ int main(int argc, char const *argv[])
 	pid_t pid;
 
 	pid = getpid();
-	printf("PDI: %d\n", pid);
+	ft_putnbr(pid);
 	signal(SIGUSR1, store_bits);
 	signal(SIGUSR2, store_bits);
 	while (1)
