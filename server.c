@@ -6,7 +6,7 @@
 /*   By: eel-orch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:16:20 by eel-orch          #+#    #+#             */
-/*   Updated: 2021/06/08 10:29:04 by eel-orch         ###   ########.fr       */
+/*   Updated: 2021/06/08 12:42:39 by eel-orch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void 	store_bits(int bit)
 	}
 }
 
-int	main(int argc, char const *argv[])
+int	main()
 {
 	pid_t	pid;
 
