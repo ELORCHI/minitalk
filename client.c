@@ -6,7 +6,7 @@
 /*   By: eel-orch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 14:32:10 by eel-orch          #+#    #+#             */
-/*   Updated: 2021/06/07 15:38:54 by eel-orch         ###   ########.fr       */
+/*   Updated: 2021/06/08 10:14:02 by eel-orch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ int	ft_atoi(const char *str)
 	}
 	return (retur(j, sin));
 }
-int ft_strlen(char *str)
+
+int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str == NULL)
@@ -61,18 +62,18 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-void error(void)
+void	error(void)
 {
 	write(1, "ERROR\n", ft_strlen("ERROR\n"));
 	exit(EXIT_FAILURE);
 }
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
-	int j;
-	int i;
-	int ret;
-	int pid;
+	int	j;
+	int	i;
+	int	ret;
+	int	pid;
 
 	pid = ft_atoi(argv[1]);
 	if (pid == 0 || pid == 1)

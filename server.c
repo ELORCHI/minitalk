@@ -6,7 +6,7 @@
 /*   By: eel-orch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:16:20 by eel-orch          #+#    #+#             */
-/*   Updated: 2021/06/07 14:16:04 by eel-orch         ###   ########.fr       */
+/*   Updated: 2021/06/08 10:29:04 by eel-orch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	ft_putnbr(int n)
 void 	store_bits(int bit)
 {
 	static unsigned char	decimal;
-	static char	i;
+	static char				i;
 
 	decimal += (bit == SIGUSR1) << i;
-	i++; 
+	i++;
 	if (i > 7)
 	{
 		i = 0;
@@ -56,10 +56,9 @@ void 	store_bits(int bit)
 	}
 }
 
-
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
-	pid_t pid;
+	pid_t	pid;
 
 	pid = getpid();
 	ft_putnbr(pid);
@@ -67,5 +66,5 @@ int main(int argc, char const *argv[])
 	signal(SIGUSR2, store_bits);
 	while (1)
 		pause();
-	return 0;
+	return (0);
 }
