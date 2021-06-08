@@ -6,7 +6,7 @@
 /*   By: eel-orch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 14:32:10 by eel-orch          #+#    #+#             */
-/*   Updated: 2021/06/08 12:44:23 by eel-orch         ###   ########.fr       */
+/*   Updated: 2021/06/08 13:39:44 by eel-orch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	main(int argc, char const *argv[])
 	int	ret;
 	int	pid;
 
-	(void)argc;
+	if (argc != 3)
+		error();
 	pid = ft_atoi(argv[1]);
 	if (pid == 0 || pid == 1 || pid == -1)
 		error();

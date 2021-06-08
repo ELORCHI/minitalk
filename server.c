@@ -6,7 +6,7 @@
 /*   By: eel-orch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 15:16:20 by eel-orch          #+#    #+#             */
-/*   Updated: 2021/06/08 12:42:39 by eel-orch         ###   ########.fr       */
+/*   Updated: 2021/06/08 13:48:22 by eel-orch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ void 	store_bits(int bit)
 	}
 }
 
-int	main()
+int	main(void)
 {
 	pid_t	pid;
 
 	pid = getpid();
 	ft_putnbr(pid);
+	write(1, "\n", 1);
 	signal(SIGUSR1, store_bits);
 	signal(SIGUSR2, store_bits);
 	while (1)
