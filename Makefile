@@ -6,30 +6,32 @@
 #    By: eel-orch <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/08 11:41:27 by eel-orch          #+#    #+#              #
-#    Updated: 2021/06/08 12:56:00 by eel-orch         ###   ########.fr        #
+#    Updated: 2021/06/08 13:33:46 by eel-orch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = talk
+NAME = server client
 
-SERVER = server.c
-SERVER_ = server
+SERVER_SRC = server.c
+SERVER_OBJ = server.o
 
-CLIENT = client.c
-CLIENT_ = client
+CLIENT_SRC = client.c
+CLIENT_OBJ = client.o
+
 
 all : $(NAME)
 
-$(NAME) :
-	gcc -Wall -Werror -Wextra $(SERVER) -o $(SERVER_)
-	gcc -Wall -Werror -Wextra $(CLIENT) -o $(CLIENT_)
+$(SERVER_OBJ) : $(SERVER_SRC)
+$(CLIENT_OBJ) : $(CLINET_SRC)
+
+$(NAME) : $(SERVER_OBJ) $(CLIENT_OBJ)
+		gcc -Wall -Werror -Wextra -o server $(SERVER_OBJ)
+		gcc -Wall -Werror -Wextra -o client $(CLIENT_OBJ)
 clean :
-	rm -rf $(CLIENT_) $(SERVER_)
+	rm -rf  $(SERVER_OBJ) $(CLIENT_OBJ) 
 
 fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
-
-.PHONY : $(NAME)
 
